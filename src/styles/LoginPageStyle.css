@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+}
+
+.sectionLeft{
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.sectionLeft i{
+    color: #C1DE6E;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.sectionRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100vh;
+    background: linear-gradient(135deg, #C1DE6E 20%, #036EFF 60%);    
+}
+
+.boxLogin{
+    width: 80vh;
+    height: 80vh;
+    background: #FFF;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boxForgot{
+    width: 80vh;
+    height: 80vh;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 20px;
+}
+
