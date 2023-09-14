@@ -57,7 +57,7 @@ const LoginPage = () => {
 
                                 <Box className='boxLogin'>
                                     <Typography sx={{ marginBottom: '10px', color: '#036EFF' }}>You don't have an account yet?</Typography>
-                                    <Button sx={{ background: '#C1DE6E' }} variant='contained' fullWidth>Sign Up</Button>
+                                    <Button sx={{ background: '#C1DE6E' }} variant='contained' onClick={() => window.location.href = "/signup"} fullWidth>Sign Up</Button>
                                 </Box>
 
                             </Card>)
