@@ -5,7 +5,6 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/Close';
-import Paragraphe from '../components/Paragraphe';
 
 
 const SignupPage = () => {
@@ -77,12 +76,12 @@ const SignupPage = () => {
                             }} />
                             <Typography style={{ marginTop: '20px', color: '#036EFF' }}>Sign up as {isClicked ? "Assistant" : ""}{isClicked2 ? "Client" : ""}</Typography>
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                                <Button sx={buttonStyleAssist} onClick={handleAssistant} variant='contained'>Assistant</Button>
+                                <Button sx={buttonStyleAssist} onClick={handleAssistant} variant='contained' title='Virtual assistants, independent freelancers, or students looking to make the most of their free time and work on various projects according to their skills.' >Assistant</Button>
                                 <Button sx={buttonStyleClient} onClick={handleClient} variant='contained'>Client</Button>
                             </Box>
 
                             <FormGroup>
-                                <FormControlLabel control={<Checkbox />} label={<Typography sx={{ fontSize: '12px' }}>I have read and agree to the <span onClick={() => setOpenTerm(true)}>Terms of use</span> and the <span onClick={() => setOpenPolicy(true)}>Confidentiality policy</span></Typography>} />
+                                <FormControlLabel control={<Checkbox />} label={<Typography sx={{ fontSize: '12px' }}>I have read and agree to the <span onClick={() => setOpenTerm(true)} className='spans'>Terms and conditions</span> and the <span onClick={() => setOpenPolicy(true)} className='spans'>Privacy policy</span></Typography>} />
                             </FormGroup>
 
                             <Button sx={{ marginTop: '20px' }} variant='contained' fullWidth>Sign Up</Button>
@@ -102,6 +101,7 @@ const SignupPage = () => {
                         <IconButton onClick={() => { setOpenTerm(false) }}>
                             <CloseIcon />
                         </IconButton>
+
 
                     </Card>
                 </Modal>

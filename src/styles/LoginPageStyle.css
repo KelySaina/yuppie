@@ -49,7 +49,7 @@
     padding: 20px;
 }
 
-span{
+.spans{
     color: #036EFF;
 }
 
@@ -57,3 +57,166 @@ span:hover{
     text-decoration: underline;
 }
 
+
+.head{
+    height: 45px;
+    box-shadow: 2px 2px 5px #B9B9B9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menus, .bmenus{
+    width: 150px;
+}
+
+.foot{
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    box-shadow: -2px -2px 5px #B9B9B9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProfilAssist{
+    color: #FFF;
+    background: linear-gradient(135deg, #C1DE6E 20%, #036EFF 60%);
+    width: 25%;
+    top: 75px;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Infos{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.ln{
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+}
+
+.ln p, .d p{
+    width: 75%;
+    color: #036EFF;
+    overflow: hidden;
+    
+}
+
+.switcher{
+    width: 100%;
+    height: 160px;
+}
+
+.btn-switch{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bio{
+    color: black;
+    padding: 0 3px;
+    border-radius: 3px;
+    background: #FFF;
+    height: 120px;
+    width: 94%;
+    margin: auto;
+}
+
+.hour{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.h{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.matrix-row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.matrix-cell{
+    width: 25px;
+    height: 25px;
+    background: #FF5757;
+    border-radius: 3px;
+    margin: 3px;
+}
+
+.days{
+    display: flex;
+    justify-content: space-evenly;
+    color: #FFF;
+    margin: auto;
+}
+
+.days span{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin: 0 3px;
+}
+
+.matrix-table{
+    width: 80%;
+}
+
+.tableAvail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+.edit-mode {
+    border: 2px solid #036EFF;
+}
+
+.cell-green {
+    background-color: #BADF5B;
+}
+
+.cell-red {
+    background-color: #FF5757;
+}
+
+.btn-maj{
+    position: absolute;
+    bottom: 40px;
+}
+
+.title{
+    font-size: 9px;
+}
+
+.d{
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+}
