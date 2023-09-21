@@ -67,7 +67,7 @@ span:hover{
 }
 
 .menus, .bmenus{
-    width: 150px;
+    width: 187px;
 }
 
 .foot{
@@ -113,7 +113,7 @@ span:hover{
     width: 75%;
     color: #036EFF;
     overflow: hidden;
-    
+
 }
 
 .switcher{
@@ -219,4 +219,54 @@ span:hover{
     justify-content: space-around;
     align-items: center;
     height: 25px;
+}
+
+.ReviewAssist{
+    width: 55%;
+    top: 75px;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.reviewTitle{
+    background: #FFF;
+    border-bottom: 5px solid #036EFF;
+    color: #036EFF;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.reviewContent{
+    color: #B9B9B9;
+    width: 100%;
+    background: #E8E8E8;
+    height: 80vh;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.MiscAssist{
+    width: 20%;
+    height: 87vh;
+    text-align: center;
+    color: #B9B9B9;
+}
+
+.MiscContent{
+    background: #FFF;
+    color: #E8E8E8;
+    width: 100%;
+    height: 80vh;
 }

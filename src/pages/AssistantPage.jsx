@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../styles/LoginPageStyle.css'
-import { Button, Typography } from '@mui/material'
+import { Button, IconButton, Typography } from '@mui/material'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp'
 import HomeIcon from '@mui/icons-material/Home'
 import NotificationsIcon from '@mui/icons-material/Notifications'
@@ -15,10 +15,75 @@ import Rating from '@mui/material/Rating'
 import ShareIcon from '@mui/icons-material/Share'
 import MatrixTable from '../components/MatrixTable'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 
 const AssistantPage = () => {
     const [sw, setSw] = useState(true)
+    const [miscTitle, setMiscTitle] = useState('FAVOURITE CLIENTS')
+    const [miscContent, setMiscContent] = useState('No favourite selected')
+    const [favColor, setFavColor] = useState(true)
+    const [contactColor, setContactColor] = useState(false)
+    const [msgColor, setMsgColor] = useState(false)
+    const [homeClicked, setHomeClicked] = useState(true)
+    const [reviewClicked, setReviewClicked] = useState(false)
+    const [infoClicked, setInfoClicked] = useState(false)
+    const [settingClicked, setSettingClicked] = useState(false)
+
+
+    const handleFavClick = () => {
+        setFavColor(true)
+        setContactColor(false)
+        setMsgColor(false)
+        setMiscTitle("FAVOURITE CLIENTS")
+        setMiscContent("No favourite selected")
+    }
+
+    const handleContactClick = () => {
+        setFavColor(false)
+        setContactColor(true)
+        setMsgColor(false)
+        setMiscTitle("CONTACTS")
+        setMiscContent("No contact selected")
+    }
+
+    const handleMessageClick = () => {
+        setFavColor(false)
+        setContactColor(false)
+        setMsgColor(true)
+        setMiscTitle("MESSAGES")
+        setMiscContent("No message")
+    }
+
+    const handleHomeClick = () => {
+        setHomeClicked(true)
+        setInfoClicked(false)
+        setReviewClicked(false)
+        setSettingClicked(false)
+    }
+
+    const handleReviewClick = () => {
+        setHomeClicked(false)
+        setInfoClicked(false)
+        setReviewClicked(true)
+        setSettingClicked(false)
+    }
+
+    const handleInfoClick = () => {
+        setHomeClicked(false)
+        setInfoClicked(true)
+        setReviewClicked(false)
+        setSettingClicked(false)
+    }
+
+    const handleSettingClick = () => {
+        setHomeClicked(false)
+        setInfoClicked(false)
+        setReviewClicked(false)
+        setSettingClicked(true)
+    }
 
     return (
         <>
@@ -27,18 +92,18 @@ const AssistantPage = () => {
                     <img src='/images/logo.png' alt='logo' height={45} />
                 </div>
                 <div>
-                    <Button startIcon={<HomeIcon />} className='menus'>HOME</Button>
-                    <Button startIcon={<NotificationsIcon />} className='menus'>MY REVIEWS</Button>
-                    <Button startIcon={<NewspaperIcon />} className='menus'>INFOHUB</Button>
-                    <Button startIcon={<SettingsIcon />} className='menus'>SETTINGS</Button>
+                    <span className='navSpan' style={{ borderBottom: homeClicked ? '5px solid #BADF5B' : '', paddingBottom: '10px' }}><Button startIcon={<HomeIcon />} onClick={handleHomeClick} className='menus'>HOME</Button></span>
+                    <span className='navSpan' style={{ borderBottom: reviewClicked ? '5px solid #BADF5B' : '', paddingBottom: '10px' }}><Button startIcon={<NotificationsIcon />} onClick={handleReviewClick} className='menus'>MY REVIEWS</Button></span>
+                    <span className='navSpan' style={{ borderBottom: infoClicked ? '5px solid #BADF5B' : '', paddingBottom: '10px' }}><Button startIcon={<NewspaperIcon />} onClick={handleInfoClick} className='menus'>INFOHUB</Button></span>
+                    <span className='navSpan' style={{ borderBottom: settingClicked ? '5px solid #BADF5B' : '', paddingBottom: '10px' }}><Button startIcon={<SettingsIcon />} onClick={handleSettingClick} className='menus'>SETTINGS</Button></span >
                 </div>
                 <div>
-                    <Button startIcon={<ExitToAppIcon />} >Logout</Button>
+                    <Button startIcon={<ExitToAppIcon />} onClick={() => { window.location.href = "/login" }} >Logout</Button>
                 </div>
 
             </div>
 
-            <div className='content'>
+            <div className='container'>
 
                 <div className='ProfilAssist'>
 
@@ -57,8 +122,8 @@ const AssistantPage = () => {
 
                     <div className='switcher'>
                         <div className='btn-switch'>
-                            <Button size='small' className='menus' variant='contained' onClick={() => { setSw(true) }}>Biography</Button>
-                            <Button size='small' className='menus' variant='contained' onClick={() => { setSw(false) }}>Availability</Button>
+                            <Button size='small' style={{ background: sw ? '#C1DE6E' : '#FFF', color: sw ? '#FFF' : '#000', fontWeight: 'bold' }} variant='contained' onClick={() => { setSw(true) }}>Biography</Button>
+                            <Button size='small' style={{ background: !sw ? '#C1DE6E' : '#FFF', color: !sw ? '#FFF' : '#000', fontWeight: 'bold' }} variant='contained' onClick={() => { setSw(false) }}>Availability</Button>
                         </div>
                         <div style={{ margin: '10px 0' }}>
                             {
@@ -88,19 +153,36 @@ const AssistantPage = () => {
                         </div>
                     </div>
                     <div className='btn-maj'>
-                        <Button variant='contained' style={{ height: '25px' }} startIcon={<DriveFileRenameOutlineIcon />} fullwidth>Update profile</Button>
+                        <Button variant='contained' style={{ height: '25px' }} startIcon={<DriveFileRenameOutlineIcon />}>Update profile</Button>
                     </div>
                 </div>
 
                 <div className='ReviewAssist'>
 
+                    <div className='reviewTitle'> <NotificationsIcon /> <b>POTENTIANL REVIEWS</b></div>
+                    <div className='reviewContent'>
+                        <h3>No results</h3>
+                        <Typography>
+                            In order for the algorithm to provide potential recommendations based on your skills, please update your profile.
+                        </Typography>
+                    </div>
+
                 </div>
 
                 <div className='MiscAssist'>
+                    <div className='icons'>
+                        <IconButton sx={{ color: favColor ? '#036EFF' : '#B9B9B9' }} onClick={handleFavClick}><FavoriteIcon /></IconButton>
+                        <IconButton sx={{ color: contactColor ? '#036EFF' : '#B9B9B9' }} onClick={handleContactClick}><GroupsIcon /></IconButton>
+                        <IconButton sx={{ color: msgColor ? '#036EFF' : '#B9B9B9' }} onClick={handleMessageClick}><MailOutlineIcon /></IconButton>
+                    </div>
+                    <p>{miscTitle}</p>
+                    <div className='MiscContent'>
+                        {miscContent}
+                    </div>
 
                 </div>
 
-            </div>
+            </div >
 
             <div className='foot'>
 
