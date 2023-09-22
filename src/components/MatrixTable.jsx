@@ -31,7 +31,7 @@ const MatrixTable = () => {
             <div className='tableAvail'>
                 <div className='hour'>
                     <div>
-                        <IconButton onClick={toggleEditMode} style={{ background: '#036EFF', color: '#FFF' }}>
+                        <IconButton onClick={toggleEditMode} style={{ background: '#036EFF', color: '#FFF' }} size='small'>
                             <ModeEditIcon fontSize='small' />
                         </IconButton>
                     </div>
